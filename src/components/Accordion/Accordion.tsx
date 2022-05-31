@@ -6,14 +6,9 @@ type AccordionPropsType = {
 }
 
 const Accordion = (props: AccordionPropsType) => {
-    return props.collapsed ?
-        <div>
+    return<div>
             <AccordionTitle title={props.titleValue}/>
-        </div>
-        :
-        <div>
-            <AccordionTitle title={props.titleValue}/>
-            <AccordionBody/>
+            { !props.collapsed &&  <AccordionBody/>}
         </div>
 };
 
