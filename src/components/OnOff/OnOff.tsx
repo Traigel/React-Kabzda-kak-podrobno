@@ -7,12 +7,11 @@ export const OnOff = () => {
 
     let colorOnOff = (a:boolean) => {
         setOnOff(a)
-        return console.log(a)
     }
 
     return <div>
-            <button onClick={()=>colorOnOff(true)} className={onOff ? s.on : s.no}>On</button>
-            <button onClick={()=>colorOnOff(false)} className={onOff ? s.no : s.off}>Off</button>
-            <span className={onOff ? s.dotOn : s.dotOff}></span>
+            <button onClick={()=>colorOnOff(true)} className={`${onOff && s.on}`}>On</button>
+            <button onClick={()=>colorOnOff(false)} className={`${!onOff && s.off}`}>Off</button>
+            <span className= {`${s.dot} ${onOff ? s.dotOn : s.dotOff}`}></span>
     </div>
 }
