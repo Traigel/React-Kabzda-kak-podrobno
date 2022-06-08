@@ -1,0 +1,11 @@
+.star {
+    display: inline-block;
+}
+
+.span {
+    margin: 5px;
+}
+
+.spanOn {
+    font-weight: bold;
+}
