@@ -1,9 +1,13 @@
 import React, {useState} from "react";
 import style from './OnOff.module.css'
 
-export const OnOff = () => {
+type OnOffTypeProps = {
+    defaultOn?: boolean
+}
 
-    let [onOff, setOnOff] = useState<boolean>(false)
+export const OnOff = (props:OnOffTypeProps) => {
+
+    let [onOff, setOnOff] = useState<boolean>(props.defaultOn ? props.defaultOn : false)
 
     let colorOnOff = (el:boolean) => {
         setOnOff(el)

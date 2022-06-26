@@ -3,7 +3,7 @@ import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {OnOff} from './components/OnOff/OnOff';
 import {Rating} from "./components/Rating/Rating";
-import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import { UncontrolledAccordion } from './components/UncontrolledAccordion/UncontrolledAccordion';
 
 function App() {
 

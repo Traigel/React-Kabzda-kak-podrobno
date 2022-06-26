@@ -1,12 +1,18 @@
 import React, {useState} from "react";
 import style from './Rating.module.css'
 
-type RatingPropsType = {
+type RatingValueType = {
   value: 0 | 1 | 2 | 3 | 4 | 5
 };
 
-export const Rating = () => {
- const [value, setValue] = useState<number>(0)
+type RatingTypeProps = {
+    defaultValue?: number
+}
+
+export const Rating = (props: RatingTypeProps) => {
+
+ const [value, setValue] = useState(props.defaultValue ? props.defaultValue : 0)
+
     const onClickStarHandler = (el:number) => setValue(el)
 
     return <div>
