@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
-import {OnOff} from './components/OnOff/OnOff';
+import {OnOff2} from './components/OnOff/OnOff2';
 import {Rating} from "./components/Rating/Rating";
 import { UncontrolledAccordion } from './components/UncontrolledAccordion/UncontrolledAccordion';
 
@@ -14,8 +14,8 @@ function App() {
             <Rating/>
             <Rating/>
             <Rating/>
-            <OnOff/>
-            <OnOff/>
+            <OnOff2/>
+            <OnOff2/>
         </div>
     )
 }
