@@ -1,5 +1,10 @@
 import React from 'react';
 
+type ItemType = {
+    title: string
+    value: any
+}
+
 type AccordionPropsType = {
     /**
      * Имя списка
@@ -13,13 +18,18 @@ type AccordionPropsType = {
      * Функция работы акардионна
      */
     onClick: ()=> void
+    /**
+     * Массив в данных
+     */
+    items: ItemType[]
+    onClickCallBack: (value: any)=> void
     color?: string
 }
 
 const Accordion = (props: AccordionPropsType) => {
     return<div>
             <AccordionTitle title={props.titleValue} onClick={props.onClick} color={props.color}/>
-            { !props.collapsed &&  <AccordionBody/>}
+            { !props.collapsed &&  <AccordionBody items={props.items} onClickCallBack={props.onClickCallBack}/>}
         </div>
 };
 
@@ -33,12 +43,19 @@ const AccordionTitle = (props: AccordionTitlePropsType) => {
     return <h3 style={{color: props.color ? props.color : "black" }} onClick={(e)=>props.onClick()}> ---{props.title}--- </h3>
 };
 
-const AccordionBody = () => {
+type AccordionBodyProsType = {
+    items: ItemType[]
+    onClickCallBack: (value: any)=> void
+}
+
+const AccordionBody = (props: AccordionBodyProsType) => {
+
     return <div>
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            {props.items.map((el, index) => {
+                const onClickHandler = () => props.onClickCallBack(el.value)
+                return <li key={index} onClick={onClickHandler}>{el.title}</li>
+            })}
         </ul>
     </div>
 };
