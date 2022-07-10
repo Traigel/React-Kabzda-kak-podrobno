@@ -1,9 +1,26 @@
-.selectItem {
-    background-color: #66bf3c;
+.select {
     margin: 10px;
     display: inline-block;
+    min-width: 100px;
 }
 
-.value {
+.span {
+    margin: 0;
+    border: 1px black solid;
+}
+
+.items {
+    display: none;
+    position: absolute;
+    border: 1px black solid;
+    padding: 5px;
+    background-color: white;
+}
+
+.select.active .items {
+    display: block;
+}
+
+.item {
     background-color: #1ea7fd;
 }

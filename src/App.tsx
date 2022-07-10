@@ -16,12 +16,12 @@ function App() {
     ]
 
     const [collapsed, setCollapsed] = useState<boolean>(false)
-    const [title, setTitle] = useState<string>('Name')
+    const [value, setValue] = useState<ItemType>({id:'', title:''})
 
     const onClickCollapsedHandler = () => setCollapsed(!collapsed)
 
-    const onClickItemHandler = (title: string) => {
-        setTitle(title)
+    const onClickItemHandler = (id: string, title: string) => {
+        setValue({id:id, title:title})
         setCollapsed(!collapsed)
     }
 
@@ -35,12 +35,15 @@ function App() {
             <OnOff2/>
             <OnOff2/>
             <Select
-                value={title}
+                value={value}
                 items={item}
                 collapsed={collapsed}
                 onClickCollapsed={onClickCollapsedHandler}
                 onClickItem={onClickItemHandler}
             />
+            <div>
+                adasdasdad
+            </div>
         </div>
     )
 }
