@@ -10,13 +10,14 @@ function generateDate() {
 }
 
 export const Example = () => {
-  console.log('Example')
+    console.log('Example')
     const [counter, setCounter] = useState(generateDate)
 
     return <>
         <button
-            onClick={()=> setCounter(state => state + 1)}
-        >+</button>
+            onClick={() => setCounter(state => state + 1)}
+        >+
+        </button>
         {counter}
     </>
 }
