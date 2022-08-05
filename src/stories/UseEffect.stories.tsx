@@ -4,8 +4,8 @@ export default {
     title: 'useEffect demo'
 }
 
-export const Example = () => {
-    console.log('Example')
+export const SimpleExample = () => {
+    console.log('SimpleExample')
     const [fake, setFake] = useState(1)
     const [counter, setCounter] = useState(1)
 
@@ -36,5 +36,25 @@ export const Example = () => {
         >fake
         </button>
         {fake}
+    </>
+}
+
+export const SetTimeoutExample = () => {
+    console.log('SetTimeoutExample')
+    const [counter, setCounter] = useState(1)
+
+    useEffect(() => {
+        console.log('useEffect every render')
+
+        setInterval( ()=> {
+            setCounter( state => state + 1)
+        }, 1000)
+
+    }, [])
+
+
+
+    return <>
+        counter: {counter}
     </>
 }
