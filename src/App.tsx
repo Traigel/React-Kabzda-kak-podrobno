@@ -6,6 +6,7 @@ import {Rating} from "./components/Rating/Rating";
 import { UncontrolledAccordion } from './components/UncontrolledAccordion/UncontrolledAccordion';
 import {ItemType, Select} from "./components/Select/Select";
 import { v1 } from 'uuid';
+import {ClockExample} from "./components/clock/Clock";
 
 function App() {
     const item: ItemType[] = [
@@ -41,9 +42,7 @@ function App() {
                 onClickCollapsed={onClickCollapsedHandler}
                 onClickItem={onClickItemHandler}
             />
-            <div>
-                adasdasdad
-            </div>
+            <ClockExample/>
         </div>
     )
 }
