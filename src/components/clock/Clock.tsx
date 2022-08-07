@@ -2,31 +2,27 @@ import React, {useState, useEffect} from "react";
 import styles from './Clock.module.css'
 
 
-export const ClockExample = () => {
+export const Clock = () => {
 
-    const [date, srtDate] = useState<Date>()
+    const [date, srtDate] = useState<Date>(new Date())
 
     useEffect( () => {
-        setInterval( () => {
+        const intervalID = setInterval( () => {
             srtDate(new Date())
         }, 1000)
+        return () => {
+            clearInterval(intervalID)
+        }
     }, [])
 
-    let stringTime = date === undefined ? 'Click start' : `${date.getHours()}.${+ date.getMinutes()}.${date.getSeconds()}`
+    let stringTime =
+        `${date.getHours() < 10 ? '0' + date.getHours() : date.getHours()}:
+        ${date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()}:
+        ${date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()}`
 
     return (
-        <div style={{width: '300px', margin: '0 auto'}}>
+        <div>
             {stringTime}
-            <div className={styles.hasy}>
-                <div className={styles.onen}>12</div>
-                <div className={styles.threen}>3</div>
-                <div className={styles.sixn}>6</div>
-                <div className={styles.ninen}>9</div>
-                <div className={styles.sekundes}></div>
-                <div className={styles.minutes}></div>
-                <div className={styles.has}></div>
-                <div className={styles.sentr}></div>
-            </div>
         </div>
     )
 }
