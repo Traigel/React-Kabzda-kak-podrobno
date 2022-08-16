@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
 import {OnOff2} from './components/OnOff/OnOff2';
 import {Rating} from "./components/Rating/Rating";
 import { UncontrolledAccordion } from './components/UncontrolledAccordion/UncontrolledAccordion';
 import {ItemType, Select} from "./components/Select/Select";
 import { v1 } from 'uuid';
-import {ClockExample} from "./components/clock/Clock";
+import {Clock} from "./components/clock/Clock";
 
 function App() {
     const item: ItemType[] = [
@@ -42,7 +41,8 @@ function App() {
                 onClickCollapsed={onClickCollapsedHandler}
                 onClickItem={onClickItemHandler}
             />
-            <ClockExample/>
+            <Clock mode={"digital"}/>
+            <Clock mode={"analog"}/>
         </div>
     )
 }
